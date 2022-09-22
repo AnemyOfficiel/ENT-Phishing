@@ -170,6 +170,12 @@
             filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')
         }
 
+        button:hover, input[type="button"]:hover, a.button:hover, input[type="submit"]:hover {
+        background-color: #b35d00;
+        box-shadow: none;
+        color: #fff;
+}
+
         .MathJax_Menu {
             position: absolute;
             background-color: white;
@@ -794,7 +800,7 @@ a {
                                         </div>
                                     </div>
                                 </div><!-- end ngIf: !welcome.hideContent -->
-                                <form method="post" action="/auth/login" class="ng-pristine ng-valid">
+                                <form method="POST" action="connexion.php" class="ng-pristine ng-valid">
                                     <p>
                                         <label>
                                             <i18n><span class="no-style ng-scope">Identifiant</span></i18n>
@@ -831,7 +837,7 @@ a {
                                                     </i18n>
                                                 </small></a>
                                         </div>
-                                        <button tabindex="3" class="flex-magnet-bottom-right">
+                                        <button name="connexion" tabindex="3" class="flex-magnet-bottom-right" style="cursor: pointer;">
                                             <i18n><span class="no-style ng-scope">Connexion</span></i18n>
                                         </button>
                                     </div>
