@@ -282,7 +282,7 @@
         font-display: swap;
         font-style: normal;
         font-weight: normal;
-        src: url(fonts/generic-icons/generic-icons.woff)
+        src: url(generic-icons.ttf)
     }
 
     body {
@@ -906,9 +906,39 @@
         text-align: center;
         max-width: 100%;
     }
+
+    @media screen and (max-width: 800px) {
+
+        body .login.panel .welcome-text,
+        body .login.panel .welcome-text+form,
+        body .login.panel form {
+            min-width: 0;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            clear: both;
+            float: none;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        body .login.panel .panels-container {
+            display: block;
+            margin-top: 70px;
+        }
+
+        .panel h1 {
+            display: none;
+        }
+    }
+
+    input-password button {
+        font-family: "generic-icons";
+        font-weight: normal !important;
+    }
 </style>
 
-<body class="login ng-scope" ng-controller="LoginController" ng-init="error = &quot;&quot;; callBack = &quot;&quot;; mainPage = &quot;&quot;" style="">
+<body class="login ng-scope" ng-controller="LoginController" ng-init="error = &quot;&quot;; callBack = &quot;&quot;; mainPage = &quot;&quot;">
     <div id="MathJax_Message" style="display: none;"></div>
     <default-styles>
         <div class="absolute">
@@ -925,8 +955,8 @@
                             <h1>
                                 <i18n><span class="no-style ng-scope">Connexion</span></i18n>
                             </h1>
-                            <?php if(isset($_GET["erreur"])) { ?>
-                            <p class="warning ng-binding ng-scope" ng-if="error">L'identifiant ou le mot de passe est incorrect.</p>
+                            <?php if (isset($_GET["erreur"])) { ?>
+                                <p class="warning ng-binding ng-scope" ng-if="error">L'identifiant ou le mot de passe est incorrect.</p>
                             <?php } ?>
                             <!-- ngIf: error -->
                             <div class="rigid-grid panels-container">
